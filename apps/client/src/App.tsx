@@ -1,4 +1,5 @@
 import {Solid} from './componets/Solid'
+import {Mutable} from './componets/Mutable'
 
 export const App: FC = () => {
 
@@ -8,6 +9,9 @@ export const App: FC = () => {
         <button class="btn">hello btn</button>
         solid
         <Solid />
+      </section>
+      <section>
+        <Mutable />
       </section>
     </div>
   )
