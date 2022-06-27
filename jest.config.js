@@ -31,10 +31,7 @@ module.exports = {
       },
       setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
 
-      snapshotSerializers: [
-        'jest-stitches',
-        '@emotion/jest/serializer',
-      ],
+      snapshotSerializers: ['jest-stitches', '@emotion/jest/serializer'],
       testEnvironment: '@happy-dom/jest-environment',
       testMatch: [
         '!<rootDir>/**/*.e2e.ts',
@@ -42,21 +39,12 @@ module.exports = {
         '<rootDir>/apps/*/src/**/__tests__/*.spec.{ts,tsx}',
       ],
       transformIgnorePatterns: ['/node_modules/'],
-      watchPlugins: [
-        require.resolve('jest-watch-typeahead/filename'),
-        require.resolve('jest-watch-typeahead/testname'),
-      ],
     },
   ],
 
-  setupFilesAfterEnv: [
-    path.resolve(__dirname, 'jest.setup.ts'),
-  ],
+  setupFilesAfterEnv: [path.resolve(__dirname, 'jest.setup.ts')],
 
-  snapshotSerializers: [
-    'jest-stitches',
-    '@emotion/jest/serializer',
-  ],
+  snapshotSerializers: ['jest-stitches', '@emotion/jest/serializer'],
 
   testEnvironment: '@happy-dom/jest-environment',
 
@@ -76,9 +64,4 @@ module.exports = {
   },
 
   transformIgnorePatterns: ['/node_modules/'],
-
-  watchPlugins: [
-    require.resolve('jest-watch-typeahead/filename'),
-    require.resolve('jest-watch-typeahead/testname'),
-  ],
 }

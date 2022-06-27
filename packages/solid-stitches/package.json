@@ -28,16 +28,17 @@
     "lib/*"
   ],
   "scripts": {
-    "build": "tsup-node --dts --minify",
-    "dev": "tsup-node --watch",
-    "prepare": "tsup-node --dts"
+    "build": "tsup --dts --minify",
+    "dev": "tsup --watch",
+    "prepare": "tsup --dts"
   },
   "dependencies": {
-    "@stitches/core": "^1.2.7",
-    "solid-js": "^1.3.10"
+    "@stitches/core": "^1.2.8",
+    "solid-js": "^1.4.4"
   },
   "devDependencies": {
-    "@babel/core": "7.17.8",
+    "tsup": "^6.1.2",
+    "@babel/core": "7.18.5",
     "esbuild-plugin-solid": "0.4.2"
   },
   "publishConfig": {

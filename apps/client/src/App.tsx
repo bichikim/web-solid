@@ -2,7 +2,6 @@ import {Solid} from './componets/Solid'
 import {Mutable} from './componets/Mutable'
 
 export const App: FC = () => {
-
   return (
     <div>
       <section>

@@ -1,11 +1,8 @@
-interface ImportMeta {
-  env: {
-    BASE_URL: string
-    MODE?: string
-    SSR?: boolean
-  }
+interface Window {
+
 }
 
-declare const __DEV__: string | undefined
-
-type FC = import('solid')['Component']
+type ClassValue = import('clsx').ClassValue
+type JsxElement = import('solid-js').JSX.Element
+type Component<P> = import('solid-js').Component<P>
+type IntrinsicElements = import('solid-js').JSX.IntrinsicElements

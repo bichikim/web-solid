@@ -1,9 +1,13 @@
 import {render} from 'solid-js/web'
-import {App} from './App'
-import './main.css'
+import {Router} from 'solid-app-router'
+import {Root} from './Root'
+import './index.css'
 
-const el = document.querySelector('#app')
-if (el) {
-  render(App, el)
-}
-
+render(
+  () => (
+    <Router>
+      <Root />
+    </Router>
+  ),
+  document.querySelector('#app'),
+)

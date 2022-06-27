@@ -5,8 +5,10 @@ module.exports = {
     'plugin:unicorn/recommended',
     'plugin:import/recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:solid/typescript',
     'eslint:recommended',
     '@vue/typescript/recommended',
+    'prettier',
   ],
   globals: {
     __QUASAR_SSR__: true,
@@ -23,12 +25,19 @@ module.exports = {
   },
   overrides: [
     {
+      // mocks
+      env: {jest: true},
+      files: ['**/__mocks__/**/*.ts'],
+      rules: {
+        'max-classes-per-file': 'off',
+        'unicorn/consistent-function-scoping': 'off',
+        'unicorn/no-static-only-class': 'off',
+      },
+    },
+    {
       // tests
       env: {jest: true},
-      files: [
-        '**/*.spec.{j,t}s?(x)',
-        '**/*.e2e.{j,t}s?(x)',
-      ],
+      files: ['**/*.spec.{j,t}s?(x)', '**/*.e2e.{j,t}s?(x)'],
       rules: {
         '@typescript-eslint/no-unused-vars': 'off',
         '@typescript-eslint/no-var-requires': 'off',
@@ -46,27 +55,21 @@ module.exports = {
     },
     {
       // configs
-      files: [
-        '**/quasar.conf.js',
-      ],
+      files: ['**/quasar.conf.js'],
       rules: {
         'max-lines-per-function': 'off',
       },
     },
     {
       // js
-      files: [
-        '**/*.js',
-      ],
+      files: ['**/*.js'],
       rules: {
         '@typescript-eslint/no-var-requires': 'off',
         'unicorn/prefer-module': 'off',
       },
     },
     {
-      files: [
-        '.eslintrc.js',
-      ],
+      files: ['.eslintrc.js'],
       rules: {'no-magic-numbers': 'off'},
     },
     {
@@ -81,16 +84,29 @@ module.exports = {
     sourceType: 'module',
     useJSXTextNode: true,
   },
-  plugins: [
-    'import',
-    'sort-keys-fix',
-    'typescript-sort-keys',
-  ],
+  plugins: ['prettier', 'import', 'sort-keys-fix', 'typescript-sort-keys', 'solid'],
   root: true,
   rules: {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
+    // Owing to using prettier, It does not need to config
+    // '@typescript-eslint/indent': [
+    //   'error',
+    //   2,
+    //   {
+    //     ObjectExpression: 'first',
+    //     SwitchCase: 1,
+    //     ignoredNodes: [
+    //       'TemplateLiteral *',
+    //       'FunctionExpression > .params[decorators.length > 0]',
+    //       'FunctionExpression > .params > :matches(Decorator, :not(:first-child))',
+    //       'ClassBody.body > PropertyDefinition[decorators.length > 0] > .key',
+    //     ],
+    //   },
+    // ],
+    '@typescript-eslint/indent': 'off',
     '@typescript-eslint/member-delimiter-style': [
-      'error', {
+      'error',
+      {
         multiline: {
           delimiter: 'none',
           requireLast: true,
@@ -104,7 +120,8 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-inferrable-types': 'off',
     '@typescript-eslint/no-unused-expressions': [
-      'error', {
+      'error',
+      {
         allowShortCircuit: true,
         allowTernary: true,
       },
@@ -121,17 +138,21 @@ module.exports = {
     'array-bracket-newline': ['error', 'consistent'],
     'array-bracket-spacing': ['error', 'never'],
     'array-callback-return': 'error',
+    'arrow-body-style': 'off',
     'arrow-parens': ['error', 'always'],
-    'arrow-spacing': ['error',
+    'arrow-spacing': [
+      'error',
       {
         after: true,
         before: true,
-      }],
+      },
+    ],
     'block-scoped-var': 'error',
     'block-spacing': ['error', 'never'],
     'brace-style': ['error', '1tbs', {allowSingleLine: true}],
     camelcase: [
-      'error', {
+      'error',
+      {
         ignoreGlobals: true,
         ignoreImports: true,
         properties: 'always',
@@ -162,36 +183,36 @@ module.exports = {
     'func-style': ['error', 'declaration', {allowArrowFunctions: true}],
     'function-call-argument-newline': ['error', 'consistent'],
     'function-paren-newline': ['error', 'consistent'],
-    'generator-star-spacing': ['error',
+    'generator-star-spacing': [
+      'error',
       {
         after: false,
         before: true,
-      }],
+      },
+    ],
     'grouped-accessor-pairs': 'error',
-    'id-length': ['error', {
-      exceptions: [
-        '_', 'x', 'y', 'z', 'p', 'm', 'h', 'w',
-        'b', 't', 'l', 'r',
-      ],
-    }],
+    'id-length': [
+      'error',
+      {
+        exceptions: ['_', 'x', 'y', 'z', 'p', 'm', 'h', 'w', 'b', 't', 'l', 'r'],
+      },
+    ],
     'import/named': 'off',
     'import/no-absolute-path': 'off',
     'import/no-unresolved': 'off',
-    indent: [
-      'error', 2, {
-        SwitchCase: 1,
-      },
-    ],
+    indent: 'off',
     'jsx-quotes': ['error', 'prefer-double'],
     'key-spacing': [
-      'error', {
+      'error',
+      {
         afterColon: true,
         beforeColon: false,
         mode: 'strict',
       },
     ],
     'keyword-spacing': [
-      'error', {
+      'error',
+      {
         after: true,
         before: true,
         overrides: {
@@ -208,17 +229,21 @@ module.exports = {
     'max-classes-per-file': 'error',
 
     'max-depth': ['error', {max: 4}],
+
     'max-len': [
-      'error', {
+      'error',
+      {
         code: 120,
         ignoreComments: true,
         ignoreTrailingComments: true,
         ignoreUrls: true,
       },
     ],
+
     'max-lines': ['error', 600],
     'max-lines-per-function': [
-      'error', {
+      'error',
+      {
         max: 100,
         skipBlankLines: true,
         skipComments: true,
@@ -240,7 +265,9 @@ module.exports = {
     'no-confusing-arrow': 'warn',
 
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+
     'no-constructor-return': 'error',
+
     'no-continue': 'error',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-div-regex': 'error',
@@ -287,7 +314,6 @@ module.exports = {
     'no-negated-condition': 'error',
     // 'no-nested-ternary': 'error',
     'no-new': 'error',
-
     'no-new-func': 'error',
     'no-new-object': 'error',
     'no-new-require': 'error',
@@ -325,7 +351,7 @@ module.exports = {
     'no-useless-call': 'error',
     'no-useless-computed-key': 'error',
     'no-useless-concat': 'error',
-    'no-useless-constructor': 'warn',
+    'no-useless-constructor': 'off',
     'no-useless-rename': 'warn',
     'no-useless-return': 'error',
     'no-var': 'error',
@@ -334,7 +360,8 @@ module.exports = {
     'no-with': 'error',
     'nonblock-statement-body-position': 'error',
     'object-curly-newline': [
-      'warn', {
+      'warn',
+      {
         consistent: true,
         multiline: true,
       },
@@ -342,7 +369,7 @@ module.exports = {
     'object-curly-spacing': ['error', 'never'],
     'one-var': ['error', 'never'],
     'operator-assignment': ['warn', 'always'],
-    'prefer-arrow-callback': 'warn',
+    'prefer-arrow-callback': 'off',
     'prefer-const': 'error',
     'prefer-destructuring': 'warn',
     'prefer-exponentiation-operator': 'warn',
@@ -354,12 +381,14 @@ module.exports = {
     'prefer-rest-params': 'error',
     'prefer-spread': 'error',
     'prefer-template': 'warn',
+    'prettier/prettier': 'error',
     'quote-props': ['error', 'as-needed'],
     quotes: ['error', 'single'],
     radix: 'error',
     'require-unicode-regexp': 'error',
     'rest-spread-spacing': 'error',
     semi: ['error', 'never'],
+    'solid/jsx-no-undef': 'off',
     'sort-imports': [
       'warn',
       {
@@ -369,14 +398,16 @@ module.exports = {
     ],
     'sort-keys-fix/sort-keys-fix': ['warn', 'asc', {natural: true}],
     'space-before-blocks': [
-      'error', {
+      'error',
+      {
         classes: 'always',
         functions: 'always',
         keywords: 'always',
       },
     ],
     'space-before-function-paren': [
-      'error', {
+      'error',
+      {
         anonymous: 'always',
         asyncArrow: 'always',
         named: 'never',
@@ -386,7 +417,8 @@ module.exports = {
     'space-infix-ops': 'error',
     'space-unary-ops': 'error',
     'switch-colon-spacing': [
-      'error', {
+      'error',
+      {
         after: false,
       },
     ],
@@ -396,7 +428,8 @@ module.exports = {
     'typescript-sort-keys/string-enum': 'warn',
     'unicorn/consistent-function-scoping': 'warn',
     'unicorn/filename-case': [
-      'warn', {
+      'warn',
+      {
         cases: {
           kebabCase: true,
           pascalCase: true,
@@ -410,6 +443,7 @@ module.exports = {
     'unicorn/no-array-reduce': 'off',
     'unicorn/no-nested-ternary': 'off',
     'unicorn/no-null': 'off',
+    'unicorn/no-unsafe-regex': 'error',
     'unicorn/prefer-export-from': 'off',
     // 적용 할 수 있도록 해야한다
     'unicorn/prefer-module': 'off',
@@ -431,10 +465,7 @@ module.exports = {
     'import/resolver': {
       typescript: {
         alwaysTryTypes: true,
-        project: [
-          'tsconfig.json',
-          'packages/*/tsconfig.json',
-        ],
+        project: ['tsconfig.json', 'packages/*/tsconfig.json'],
       },
     },
   },

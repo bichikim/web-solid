@@ -8,13 +8,11 @@ interface MutableItemProps {
 export const MutableItem = (props: MutableItemProps) => {
   const [signal, setSignal] = createSyncSignal<string>(props)
   const onChange = () => {
-    setSignal((value) => `${value}o`)
+    setSignal((signal) => `${signal}0`)
   }
   return (
     <div>
-      <div>
-        {signal()}
-      </div>
+      <div>{signal()}</div>
       <button onClick={onChange}>change</button>
     </div>
   )
