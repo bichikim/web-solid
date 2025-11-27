@@ -28,6 +28,7 @@
     "@solidjs/testing-library": "^0.8.10",
     "@storybook/addon-vitest": "^10.1.0",
     "@testing-library/jest-dom": "^6.9.1",
+    "@types/node": "^24.10.1",
     "@vitest/browser-playwright": "^4.0.14",
     "@winter-love/vite-plugin-monorepo-alias": "^1.0.37",
     "dotenv": "^17.2.3",
