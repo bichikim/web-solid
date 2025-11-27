@@ -14,12 +14,12 @@ declare module '*.jpeg' {
 }
 
 declare module '~icons/*' {
-  const icon: any
+  const icon: string
   export default icon
 }
 
 declare module '*.mp3' {
-  const Sound: any
+  const Sound: string
   export default Sound
 }
 

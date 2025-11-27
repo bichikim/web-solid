@@ -307,6 +307,7 @@ const sharedConfig = {
     // 'max-statements-per-line': ['error', {max: 2}],
     'n/no-extraneous-import': 'off',
     'n/no-missing-import': 'off',
+    'n/no-unsupported-features/node-builtins': 'warn',
     'solid/reactivity': 'off',
     'sort-export-all/sort-export-all': 'warn',
     // 'sort-imports': [

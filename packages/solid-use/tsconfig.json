@@ -2,6 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": ".",
+    "target": "es2022",
     "paths": {
       "src/*": ["src/*"]
     },
