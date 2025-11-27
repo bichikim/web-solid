@@ -1,6 +1,0 @@
-
-
-> @winter-love/sw@1.0.0 lint /Users/gimbichi/Documents/Apps/web/packages/sw
-> cross-env NODE_ENV=script eslint src
-
-evn script

@@ -9,8 +9,8 @@
   },
   "exports": {
     ".": {
-      "import": "./index.mjs",
-      "types": "./index.d.ts"
+      "types": "./index.d.ts",
+      "import": "./index.mjs"
     },
     "./require": {
       "import": "./require.mjs"
