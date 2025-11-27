@@ -1,0 +1,29 @@
+{
+  "name": "@winter-love/unocss-preset-var",
+  "version": "1.0.29",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.mjs"
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "lint": "eslint src",
+    "lint:fix": "cross-env NODE_ENV=script eslint src --fix"
+  },
+  "dependencies": {
+    "@unocss/core": "^66.5.9",
+    "@unocss/preset-mini": "^66.5.9",
+    "@unocss/rule-utils": "^66.5.9",
+    "unocss": "^66.5.9"
+  },
+  "devDependencies": {
+    "unbuild": "^3.6.1"
+  }
+}
