@@ -17,12 +17,14 @@
     // for 4.4.0
     // "exactOptionalPropertyTypes": true,
     "allowSyntheticDefaultImports": true,
-    "suppressImplicitAnyIndexErrors": true,
     "sourceMap": true,
     "strict": true,
     "target": "ES2020",
     // Quasar-defined webpack aliases
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "#.storybook/*": ["./.storybook/*"]
+    }
   },
   "ts-node": {
     "transpileOnly": true,
@@ -31,4 +33,13 @@
       "module": "CommonJS"
     }
   },
+  "include": [
+    ".storybook/**/*.ts",
+    ".storybook/**/*.tsx",
+    "stories/**/*.ts",
+    "stories/**/*.tsx",
+    "stories/types/*.d.ts",
+    ".storybook/preview.ts",
+    ".storybook/main.ts"
+  ]
 }

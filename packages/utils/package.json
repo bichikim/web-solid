@@ -1,0 +1,52 @@
+{
+  "name": "@winter-love/utils",
+  "version": "1.0.37",
+  "description": "Useful javascript utils",
+  "keywords": [
+    "typescript",
+    "utils",
+    "functional"
+  ],
+  "repository": "git@github.com:winter-love/web.git",
+  "license": "MIT",
+  "author": "bichi@live.co.kr",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./*": "./*"
+  },
+  "main": "dist/index.js",
+  "jsdelivr": "dist/index.global.js",
+  "unpkg": "dist/index.global.js",
+  "module": "dist/index.mjs",
+  "source": "src/index.ts",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/*"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "check-types": "tsc --noEmit",
+    "dev": "vite build --watch --minify false",
+    "lint": "cross-env NODE_ENV=script eslint src",
+    "lint:fix": "cross-env NODE_ENV=script eslint src --fix"
+  },
+  "dependencies": {
+    "es-toolkit": "^1.42.0",
+    "safe-stable-stringify": "^2.5.0",
+    "scroll-into-view-if-needed": "^3.1.0",
+    "smooth-scroll-into-view-if-needed": "^2.0.2"
+  },
+  "devDependencies": {
+    "@types/js-cookie": "^3.0.6",
+    "@winter-love/vite-config": "workspace:*",
+    "js-cookie": "^3.0.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "d2b83a5ae925fd122a6f46c99d743ede11b86c2f"
+}

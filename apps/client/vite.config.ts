@@ -2,6 +2,7 @@ import {defineConfig} from 'vite'
 import icons from 'unplugin-icons/vite'
 import markdown from 'vite-plugin-md'
 import {VitePWA as vitePWA} from 'vite-plugin-pwa'
+import { fileURLToPath } from 'url';
 import Prism from 'markdown-it-prism'
 import LinkAttributes from 'markdown-it-link-attributes'
 import vitePluginImp from 'vite-plugin-imp'
@@ -81,7 +82,9 @@ export default defineConfig(() => {
     ],
 
     resolve: {
-      alias: {},
+      alias: {
+        src: fileURLToPath(new URL('src', import.meta.url)),
+      },
     },
 
     server: {

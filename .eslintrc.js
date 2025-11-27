@@ -1,13 +1,10 @@
 module.exports = {
   env: {node: true},
   extends: [
-    'plugin:vue/vue3-recommended',
     'plugin:unicorn/recommended',
-    'plugin:import/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:solid/typescript',
     'eslint:recommended',
-    '@vue/typescript/recommended',
     'prettier',
   ],
   globals: {
@@ -49,8 +46,6 @@ module.exports = {
         'prefer-destructuring': 'off',
         'unicorn/consistent-function-scoping': 'off',
         'unicorn/no-useless-undefined': 'off',
-        'vue/one-component-per-file': 'off',
-        'vue/require-prop-types': 'off',
       },
     },
     {
@@ -72,10 +67,6 @@ module.exports = {
       files: ['.eslintrc.js'],
       rules: {'no-magic-numbers': 'off'},
     },
-    {
-      files: ['**/*.vue'],
-      rules: {'@typescript-eslint/no-unused-vars': 'off'},
-    },
   ],
   parserOptions: {
     ecmaVersion: 2020,
@@ -84,7 +75,7 @@ module.exports = {
     sourceType: 'module',
     useJSXTextNode: true,
   },
-  plugins: ['prettier', 'import', 'sort-keys-fix', 'typescript-sort-keys', 'solid'],
+  plugins: ['prettier', 'sort-keys-fix', 'typescript-sort-keys', 'solid'],
   root: true,
   rules: {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
@@ -197,9 +188,6 @@ module.exports = {
         exceptions: ['_', 'x', 'y', 'z', 'p', 'm', 'h', 'w', 'b', 't', 'l', 'r'],
       },
     ],
-    'import/named': 'off',
-    'import/no-absolute-path': 'off',
-    'import/no-unresolved': 'off',
     indent: 'off',
     'jsx-quotes': ['error', 'prefer-double'],
     'key-spacing': [
@@ -451,22 +439,10 @@ module.exports = {
     'unicorn/prefer-node-protocol': 'off',
     'unicorn/prefer-ternary': 'off',
     'unicorn/prevent-abbreviations': 'off',
-    'vue/component-name-in-template-casing': ['warn', 'kebab-case'],
-    'vue/multi-word-component-names': 'off',
-    'vue/order-in-components': 'off',
-    'vue/require-default-prop': 'off',
-    'vue/return-in-computed-property': 'off',
     'wrap-iife': 'error',
     'yield-star-spacing': ['error', 'before'],
     yoda: 'error',
   },
   settings: {
-    'import/parsers': {'@typescript-eslint/parser': ['.ts', '.tsx', 'vue']},
-    'import/resolver': {
-      typescript: {
-        alwaysTryTypes: true,
-        project: ['tsconfig.json', 'packages/*/tsconfig.json'],
-      },
-    },
   },
 }
