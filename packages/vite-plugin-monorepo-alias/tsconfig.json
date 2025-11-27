@@ -1,0 +1,20 @@
+{
+  "extends": "../../tsconfig.json",
+  "compileOnSave": false,
+  "compilerOptions": {
+    "declaration": true,
+    "outDir": "lib",
+    "baseUrl": ".",
+    "paths": {
+      "src/*": ["src/*"],
+      "#test/*": ["src/test/*"]
+    }
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "target": "ES2015",
+      "module": "CommonJS"
+    }
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
+}

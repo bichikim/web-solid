@@ -2,6 +2,8 @@ import withSolid from 'rollup-preset-solid'
 import {fileURLToPath} from 'node:url'
 import alias from '@rollup/plugin-alias'
 
+const defaultRoot = process.cwd()
+
 export default withSolid([
   {
     input: 'src/index.tsx',
@@ -10,7 +12,7 @@ export default withSolid([
         entries: [
           {
             find: /^src\/(.*)$/u,
-            replacement: `${fileURLToPath(new URL('src', import.meta.url))}/$1`,
+            replacement: `${defaultRoot}/src/$1`,
           },
         ],
       }),

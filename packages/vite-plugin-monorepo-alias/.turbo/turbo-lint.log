@@ -1,0 +1,19 @@
+
+
+> @winter-love/vite-plugin-monorepo-alias@1.0.37 lint /Users/gimbichi/Documents/Apps/web/packages/vite-plugin-monorepo-alias
+> cross-env NODE_ENV=script eslint src
+
+evn script
+
+Oops! Something went wrong! :(
+
+ESLint: 9.29.0
+
+A configuration object specifies rule "@typescript-eslint/no-empty-object-type", but could not find plugin "@typescript-eslint".
+
+Common causes of this problem include:
+
+1. The "@typescript-eslint" plugin is not defined in your configuration file.
+2. The "@typescript-eslint" plugin is not defined within the same configuration object in which the "@typescript-eslint/no-empty-object-type" rule is applied.
+
+[41m[30m ELIFECYCLE [39m[49m [31mCommand failed with exit code 2.[39m

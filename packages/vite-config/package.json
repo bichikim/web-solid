@@ -9,7 +9,8 @@
   },
   "exports": {
     ".": {
-      "import": "./index.mjs"
+      "import": "./index.mjs",
+      "types": "./index.d.ts"
     },
     "./require": {
       "import": "./require.mjs"
@@ -39,5 +40,8 @@
     "vite-plugin-dts": "^4.5.4",
     "vite-plugin-solid": "^2.11.10",
     "vitest": "^4.0.14"
+  },
+  "devDependencies": {
+    "rollup": "^4.53.3"
   }
 }

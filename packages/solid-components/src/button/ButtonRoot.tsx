@@ -1,5 +1,4 @@
 import {createMemo, createSignal, JSX, mergeProps, ParentProps} from 'solid-js'
-import {now} from '@winter-love/lodash'
 import {ButtonContext, ButtonContextProps, ButtonContextValue} from './context'
 
 export type ButtonType = 'button' | 'anchor' | 'anchor-button'
@@ -20,6 +19,10 @@ export interface ButtonRootProps extends ParentProps {
   onTouchStart?: JSX.EventHandler<HTMLButtonElement, TouchEvent>
   preventLoadingDisabled?: boolean
   type?: ButtonType
+}
+
+const now = () => {
+  return Date.now()
 }
 
 const DEFAULT_DOUBLE_CLICK_GAP = 250

@@ -1,0 +1,16 @@
+
+> @winter-love/vite-plugin-monorepo-alias@1.0.37 build /Users/gimbichi/Documents/Apps/web/packages/vite-plugin-monorepo-alias
+> vite build
+
+vite v6.4.1 building for production...
+transforming...
+✓ 2 modules transformed.
+rendering chunks...
+
+[vite:dts] Start generate declaration files...
+computing gzip size...
+dist/index.mjs  2.04 kB │ gzip: 0.89 kB
+[vite:dts] Declaration files built in 3453ms.
+
+dist/index.js  1.59 kB │ gzip: 0.81 kB
+✓ built in 3.73s
