@@ -1,0 +1,22 @@
+{
+  "name": "@winter-love/rollup-config",
+  "version": "1.0.29",
+  "private": true,
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bichikim/web.git"
+  },
+  "exports": {
+    ".": {
+      "rollup": "./rollup.mjs"
+    },
+    "./*": "./*"
+  },
+  "main": "index.mjs",
+  "dependencies": {
+    "@rollup/plugin-alias": "^6.0.0",
+    "rollup": "^4.53.3",
+    "rollup-preset-solid": "^3.0.0"
+  }
+}

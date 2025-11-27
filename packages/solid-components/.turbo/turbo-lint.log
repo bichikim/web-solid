@@ -1,0 +1,6 @@
+
+
+> @winter-love/solid-components@1.0.37 lint /Users/gimbichi/Documents/Apps/web/packages/solid-components
+> cross-env NODE_ENV=script eslint src
+
+evn script

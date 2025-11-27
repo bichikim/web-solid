@@ -1,0 +1,8 @@
+
+> @winter-love/solid-components@1.0.37 build /Users/gimbichi/Documents/Apps/web/packages/solid-components
+> node fix-build.js && rollup -c rollup.config.js && tspc -p tsconfig.build.json
+
+/Users/gimbichi/Documents/Apps/web/node_modules/.pnpm/rollup-preset-solid@3.0.0_@types+babel__core@7.20.5_solid-js@1.9.10/node_modules/rollup-preset-solid/dist/index.mjs file:///Users/gimbichi/Documents/Apps/web/node_modules/.pnpm/rollup-preset-solid@3.0.0_@types+babel__core@7.20.5_solid-js@1.9.10/node_modules/rollup-preset-solid/dist/index.mjs
+[36m
+[1m/Users/gimbichi/Documents/Apps/web/packages/solid-components/src/index.tsx[22m → [1mdist/index/index.common.js, dist/index/index.module.js[22m...[39m
+[32mcreated [1mdist/index/index.common.js, dist/index/index.module.js[22m in [1m804ms[22m[39m

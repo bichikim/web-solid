@@ -37,6 +37,7 @@
   ],
   "devDependencies": {
     "@chromatic-com/storybook": "^4.1.3",
+    "@solidjs/testing-library": "^0.8.10",
     "@storybook/addon-a11y": "^10.1.0",
     "@storybook/addon-docs": "^10.1.0",
     "@storybook/addon-links": "^10.1.0",
@@ -52,6 +53,7 @@
     "@vitest/browser-playwright": "^4.0.14",
     "@vitest/coverage-v8": "^4.0.14",
     "@winter-love/eslint-config": "workspace:*",
+    "@winter-love/test-utils": "workspace:*",
     "@winter-love/vite-config": "workspace:*",
     "@winter-love/vite-plugin-monorepo-alias": "^1.0.37",
     "eslint": "^9.39.1",

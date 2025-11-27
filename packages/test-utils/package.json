@@ -1,0 +1,31 @@
+{
+  "name": "@winter-love/test-utils",
+  "version": "1.0.29",
+  "private": true,
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bichikim/web.git"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs"
+    },
+    "./*": "./*"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "vite build",
+    "build:dev": "vite build --minify false",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix"
+  },
+  "dependencies": {
+    "es-toolkit": "^1.42.0"
+  },
+  "devDependencies": {
+    "@winter-love/vite-config": "workspace:*"
+  }
+}
