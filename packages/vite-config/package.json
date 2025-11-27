@@ -14,15 +14,29 @@
     "./require": {
       "import": "./require.mjs"
     },
+    "./storybook": {
+      "import": "./storybook.mjs"
+    },
+    "./vitest": {
+      "import": "./vitest.mjs"
+    },
     "./*": "./*"
   },
   "main": "index.mjs",
   "types": "index.d.ts",
   "dependencies": {
+    "@solidjs/testing-library": "^0.8.10",
+    "@storybook/addon-vitest": "^10.1.0",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@vitest/browser-playwright": "^4.0.14",
+    "@winter-love/vite-plugin-monorepo-alias": "^1.0.37",
+    "dotenv": "^17.2.3",
     "es-toolkit": "^1.42.0",
+    "playwright": "^1.57.0",
     "typescript": "^5.9.3",
     "vite": "^7.2.4",
     "vite-plugin-dts": "^4.5.4",
-    "vite-plugin-solid": "^2.11.10"
+    "vite-plugin-solid": "^2.11.10",
+    "vitest": "^4.0.14"
   }
 }

@@ -1,6 +1,5 @@
-import {expectType} from 'tsd'
 import {toArray} from '../'
-import {describe, expect, it} from 'vitest'
+import {describe, expect, expectTypeOf, it} from 'vitest'
 
 describe('to-array', () => {
   it('should return an array with an array argument', () => {
@@ -25,6 +24,6 @@ describe('to-array', () => {
     const result = toArray<string>(null)
 
     expect(result).toEqual([])
-    expectType<string[]>(result)
+    expectTypeOf(result).toEqualTypeOf<string[]>()
   })
 })

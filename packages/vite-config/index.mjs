@@ -5,6 +5,8 @@ import {defineConfig} from 'vite'
 import dts from 'vite-plugin-dts'
 import solidPlugin from 'vite-plugin-solid'
 
+export * from './targets.mjs'
+
 const defaultRoot = process.cwd()
 
 /**
@@ -90,4 +92,3 @@ export const createConfig = ({
   })
 }
 
-export const targets = 'chrome >= 55, safari >= 11.3, firefox >= 53, opera >= 42, edge >= 15, last 2 versions, not dead'

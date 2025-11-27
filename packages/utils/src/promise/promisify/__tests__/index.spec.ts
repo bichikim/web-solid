@@ -1,5 +1,4 @@
-import {expectType} from 'tsd'
-import {describe, expect, it} from 'vitest'
+import {describe, expect, expectTypeOf, it} from 'vitest'
 import {promisify} from '../'
 
 describe('promisify', () => {
@@ -11,7 +10,7 @@ describe('promisify', () => {
     }
     const runner = promisify(callbackRunner)
 
-    expectType<(count: number) => Promise<number>>(runner)
+    expectTypeOf(runner).toEqualTypeOf<(count: number) => Promise<number>>()
 
     return expect(runner(1)).resolves.toEqual(2)
   })

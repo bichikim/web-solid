@@ -1,5 +1,4 @@
-import {expectType} from 'tsd'
-import {describe, it} from 'vitest'
+import {describe, expectTypeOf, it} from 'vitest'
 import {ArrayLength, ClassFunction, DropParameters} from '../'
 
 describe('language', () => {
@@ -11,7 +10,7 @@ describe('language', () => {
       }
 
       // noinspection JSUnusedLocalSymbols
-      expectType<[number]>(typeTest((_: string, __: number) => 'foo'))
+      expectTypeOf(typeTest((_: string, __: number) => 'foo')).toEqualTypeOf<[number]>()
     })
   })
 
@@ -23,7 +22,7 @@ describe('language', () => {
         return args as any
       }
 
-      expectType<2>(typeTest(foo))
+      expectTypeOf(typeTest(foo)).toEqualTypeOf<2>()
     })
   })
 
@@ -32,7 +31,7 @@ describe('language', () => {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
       const foo: Function = 'foo' as any
 
-      expectType<ClassFunction>(foo)
+      expectTypeOf(foo).toEqualTypeOf<ClassFunction>()
     })
   })
 })
